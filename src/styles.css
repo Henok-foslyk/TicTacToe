@@ -1,90 +1,93 @@
-* {
-  box-sizing: border-box;
+/* TicTacToe.css */
+
+/* Colors */
+:root {
+  --light-orange: #FFD9A0;
+  --soft-pink: #FFC6E3;
+  --highlight-pink: #FF7EB9;
+  --deep-orange: #FF914D;
+  --text-dark: #4a2c2a;
 }
 
 body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
+  background: linear-gradient(to right, var(--soft-pink), var(--light-orange));
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  padding: 20px;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
+/* Squares */
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background-color: var(--light-orange);
+  border: 2px solid var(--highlight-pink);
   float: left;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
+  color: var(--text-dark);
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
   text-align: center;
-  width: 34px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 10px;
 }
 
+.square:hover {
+  background-color: var(--soft-pink);
+  transform: scale(1.05);
+}
+
+/* Board rows */
 .board-row:after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
+/* Status message */
 .status {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--deep-orange);
 }
+
+/* Game layout */
 .game {
   display: flex;
   flex-direction: row;
 }
 
+.game-board {
+  margin-right: 30px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+}
+
 .game-info {
-  margin-left: 20px;
+  background-color: rgba(255, 198, 227, 0.4);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.game-info ol {
+  padding-left: 20px;
+}
+
+.game-info button {
+  margin-top: 5px;
+  background-color: var(--highlight-pink);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.game-info button:hover {
+  background-color: var(--deep-orange);
 }
